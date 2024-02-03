@@ -1,0 +1,12 @@
+#Name: malicious_bat_via_powershell
+#Description: Triggers on downloaded bat files from the internet via powershell
+#Definition
+Custom query: event.dataset : "windows.sysmon_operational" and process.parent.command_line: *Invoke-WebRequest* and process.parent.name: powershell.exe and process.command_line: *bat*
+Rule Type: Query
+Timeline template: None
+Suppress alerts by: source.ip
+Suppress alerts for: 5m
+If a suppression field is missing: Suppress and group alerts for events with missing fields
+#Schedule
+Runs every: 5m
+Additional look-back time: 5m
