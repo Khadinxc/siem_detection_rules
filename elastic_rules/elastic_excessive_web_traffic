@@ -1,0 +1,9 @@
+#Triggers when more the 1000 queries to a web server have been obeserves in a 5 min window.
+#Definition
+Custom query: event.dataset : "zeek.http" 
+Rule Type: Threshold
+Timeline template: None
+Threshold: Results aggregated by source.ip,destination.ip >= 1000
+#Schedule
+Runs every: 5m
+Additional look-back time: 5m
