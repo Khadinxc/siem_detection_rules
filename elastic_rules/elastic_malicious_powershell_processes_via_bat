@@ -1,4 +1,5 @@
-#checks my windows.sysmon_operational data set for command line processes starting with powershell, command line parent processes containing bat, and parent process names of cmd.exe
+#Name: malicious_powershell_processes_via_bat
+#Description: Checks my windows.sysmon_operational data set for command line processes starting with powershell, command line parent processes containing bat, and parent process names of cmd.exe.
 #Definition
 Custom query: event.dataset : "windows.sysmon_operational"  and process.command_line: powershell* and process.parent.command_line: *bat* and process.parent.name: cmd.exe
 Rule Type: Query

@@ -1,4 +1,5 @@
-#checks my zeek.http data set which includes all http traffic within my homelab and looks for url extensions that have bat in them, and ports that do not equal 80
+#Name: malicious_webscanner_activity_nmap_and_nikto
+#Description: Detects nmap and nikto scan activity based on user agent strings.
 #Definition
 Custom query: event.dataset :"zeek.http" and user_agent.original : *Nmap* or user_agent.original : *echo*
 Rule Type: Query
