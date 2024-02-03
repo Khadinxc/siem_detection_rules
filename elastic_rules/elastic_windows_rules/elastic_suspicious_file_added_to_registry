@@ -1,0 +1,12 @@
+#Name: suspicious_file_added_to_registry
+#Description: This alert looks for .ps1 files added to autorun on bootup locations in the Windows Registry.
+#Definition
+Custom Query: event.dataset : "windows.sysmon_operational" and registry.key : *CurrentVersion\\Run* and event.action : RegistryEvent*Value*Set* and registry.path : *Microsoft\\Windows\\CurrentVersion\\Run* and registry.data.strings : *.ps1*
+Rule Type: Query
+Timeline template: None
+Suppress alerts by: host.hostname
+Suppress alerts for: 5m
+If a suppression field is missing: Suppress and group alerts for events with missing fields
+#Schedule
+Runs every: 5m
+Additional look-back time: 5m

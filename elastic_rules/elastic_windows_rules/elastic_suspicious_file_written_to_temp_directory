@@ -1,0 +1,12 @@
+#Name: suspicious_file_written_to_temp_directory
+#Description: This alert looks for both specific files and file extensions written to a file path containing WIndows\Temp\
+#Definition
+Custom query: event.action : (creation or overwrite) and process.name : *powershell.exe* and file.path : *Windows\\Temp\\* and file.name : (History or *.txt)
+Rule Type: Query
+Timeline template: None
+Suppress alerts by: host.hostname
+Suppress alerts for: 5m
+If a suppression field is missing: Suppress and group alerts for events with missing fields
+#Schedule
+Runs every: 5m
+Additional look-back time: 5m

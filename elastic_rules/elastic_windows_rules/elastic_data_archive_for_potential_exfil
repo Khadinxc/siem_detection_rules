@@ -1,0 +1,12 @@
+#Name: data_archive_for_potential_exfil
+#Description: This alert looks for .zip files being created in a file path containing Windows\Temp.
+#Definition
+Custom query: event.action : (creation or overwrite) and process.name : *powershell.exe* and file.path : *Windows\\Temp\\* and file.name : *.zip
+Rule Type: Query
+Timeline template: None
+Suppress alerts by: host.hostname
+Suppress alerts for: 5m
+If a suppression field is missing: Suppress and group alerts for events with missing fields
+#Schedule
+Runs every: 5m
+Additional look-back time: 5m
