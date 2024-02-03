@@ -1,0 +1,2 @@
+#checks my zeek.http data set which includes all http traffic within my homelab and looks for url extensions that have bat in them, and ports that do not equal 80
+event.dataset: "zeek.http" and  url.extension: bat and not destination.port: 80
