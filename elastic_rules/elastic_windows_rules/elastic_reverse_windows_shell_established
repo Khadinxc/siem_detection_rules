@@ -1,12 +1,12 @@
-#Name:reverse_windows_shell_established
+#Name: potential_windows_shell_via_msf
 #Description: Alert triggers via sysmon data based on MetaSploit Framework payload formatting for default Powershell reverse shell payloads.
 #Definition
 Custom query: event.dataset : "windows.sysmon_operational" and process.command_line: "\"cmd.exe\"" and message: "*powershell  -w hidden -nop -c $a='*"
-Rule Type: 
-Timeline template: 
+Rule Type: Query
+Timeline template: None
 Suppress alerts by: host.hostname
 Suppress alerts for: 5m
-If a suppression field is missing: 
+If a suppression field is missing: Suppress and group alerts for events with missing fields
 #Schedule
 Runs every: 5m
 Additional look-back time: 5m

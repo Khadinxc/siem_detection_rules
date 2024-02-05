@@ -1,5 +1,5 @@
 #Name: malicious_bat_via_powershell
-#Description: Triggers on downloaded bat files from the internet via powershell
+#Description: Using sysmon data, triggers on downloaded bat files from the internet via powershell.
 #Definition
 Custom query: event.dataset : "windows.sysmon_operational" and process.parent.command_line: *Invoke-WebRequest* and process.parent.name: powershell.exe and process.command_line: *bat*
 Rule Type: Query

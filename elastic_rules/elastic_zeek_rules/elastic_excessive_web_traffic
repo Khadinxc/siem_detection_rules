@@ -1,4 +1,5 @@
-#Triggers when more the 1000 queries to a web server have been obeserves in a 5 min window.
+#Name: excessive_web_traffic
+#Description: Triggers when more the 1000 queries to a web server have been obeserves in a 5 min window.
 #Definition
 Custom query: event.dataset : "zeek.http" 
 Rule Type: Threshold
