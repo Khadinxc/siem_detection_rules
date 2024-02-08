@@ -1,0 +1,53 @@
+[rule]
+author = ["Kaiber Yonnij"]
+description = "Insert Description here"
+from = "now-6m" # this is the default value, change as needed.
+name = "Insert Name Here"
+note = "Insert Analysis Notes Here"
+risk_score = 47
+severity = "medium"
+tags = ["Example", "Tag"]
+type = "eql"
+
+query = '''
+sequence with maxspan=1m
+[process where host.os.type == "windows" and event.action == "start" and
+  (
+    process.name : (
+      "rundll32.exe", "mshta.exe", "powershell.exe", "pwsh.exe",
+      "cmd.exe", "regsvr32.exe", "cscript.exe", "wscript.exe"
+    ) or
+    (
+      (process.code_signature.trusted == false or process.code_signature.exists == false) and 
+      (process.Ext.relative_file_creation_time <= 500 or process.Ext.relative_file_name_modify_time <= 500)
+    )
+  )
+] by process.executable
+[process where host.os.type == "windows" and event.action == "start" and process.name : "OUTLOOK.EXE" and
+  process.Ext.effective_parent.name != null] by process.Ext.effective_parent.executable
+'''
+
+# [rule.threshold]
+# field = ["host.hostname"]
+# value = 100
+
+[[rule.threat]] #E Example Tactic, Technique, and Sub-Technique
+framework = "MITRE ATT&CK"
+[[rule.threat.technique]]
+id = "T1114"
+name = "Email Collection"
+reference = "https://attack.mitre.org/techniques/T1114/"
+[[rule.threat.technique.subtechnique]]
+id = "T1114.002"
+name = "Remote Email Collection"
+reference = "https://attack.mitre.org/techniques/T1114/002/"
+
+[rule.threat.tactic]
+id = "TA0009"
+name = "Collection"
+reference = "https://attack.mitre.org/tactics/TA0009/"
+
+# Optional Fields
+# throttle : 7d
+# veersion: 1
+# interval: 5m
