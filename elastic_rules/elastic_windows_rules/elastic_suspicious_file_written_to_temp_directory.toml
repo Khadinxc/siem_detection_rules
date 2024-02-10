@@ -9,7 +9,7 @@ type = "query"
 rule_id = "00000000-0000-0000-0000-000000000006"
 
 query = '''
-event.action : (creation or overwrite) and process.name : *powershell.exe* and file.path : *Windows\\Temp\\* and file.name : (History or *.txt)
+event.action : (creation or overwrite) and process.name : *powershell.exe* and file.path : "*Windows\\Temp\\*" and file.name : (History or *.txt)
 '''
 
 [[rule.threat]]

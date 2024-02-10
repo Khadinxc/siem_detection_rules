@@ -3,14 +3,14 @@ author = ["Kaiber Yonnij"]
 description = "Triggers when more the 1000 queries to a web server have been obeserves in a 5 min window."
 from = "now-6m"
 name = "excessive_web_traffic"
-risk_score = 25
+risk_score = 75
 severity = "low"
 type = "threshold"
 rule_id = "00000000-0000-0000-0000-000000000008"
+
 query = '''
 event.dataset : "zeek.http" 
 '''
-
 [rule.threshold]
 field = ["source.ip"]
 value = 1000
