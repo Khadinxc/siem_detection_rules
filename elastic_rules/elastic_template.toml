@@ -8,6 +8,7 @@ risk_score = 47
 severity = "medium"
 tags = ["Example", "Tag"]
 type = "eql"
+rule_id = "00000000-0000-0000-0000-000000000000"
 
 query = '''
 sequence with maxspan=1m

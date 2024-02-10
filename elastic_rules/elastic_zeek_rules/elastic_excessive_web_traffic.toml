@@ -6,10 +6,11 @@ name = "excessive_web_traffic"
 risk_score = 25
 severity = "low"
 type = "threshold"
-
+rule_id = "00000000-0000-0000-0000-000000000008"
 query = '''
 event.dataset : "zeek.http" 
 '''
+
 [rule.threshold]
 field = ["source.ip"]
 value = 1000

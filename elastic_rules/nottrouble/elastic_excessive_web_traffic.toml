@@ -1,16 +1,19 @@
 [rule]
 author = ["Kaiber Yonnij"]
-description = "Detects nmap and nikto scan activity based on user agent strings."
-from = "now-6m" 
-name = "Web Scanner Activity - Nmap and Nikto"
-risk_score = 25
+description = "Triggers when more the 1000 queries to a web server have been obeserves in a 5 min window."
+from = "now-6m"
+name = "excessive_web_traffic"
+risk_score = 75
 severity = "low"
-type = "query"
-rule_id = "00000000-0000-0000-0000-000000000010"
+type = "threshold"
+rule_id = "00000000-0000-0000-0000-000000000008"
 
 query = '''
-event.dataset: "zeek.http" and user_agent.original : *Nmap* or user_agent.original : *echo*
+event.dataset : "zeek.http" 
 '''
+[rule.threshold]
+field = ["source.ip"]
+value = 1000
 
 [[rule.threat]]
 framework = "MITRE ATT&CK"
