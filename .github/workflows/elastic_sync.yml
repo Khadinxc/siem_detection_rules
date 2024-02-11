@@ -2,7 +2,7 @@ name: Updating Detections
 
 on:
   push:
-    branch:
+    branches:
       - main
     path:
       '**.toml'
