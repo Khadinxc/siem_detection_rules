@@ -1,10 +1,13 @@
 import tomllib
+import sys
 import os
+
 
 #file = "alert_example.toml"
 #with open(file,"rb") as toml:
 #    alert = tomllib.load(toml)
 
+failure = 0
 
 for root, dirs, files in os.walk("elastic_rules"): 
     for file in files:
@@ -34,14 +37,11 @@ for root, dirs, files in os.walk("elastic_rules"):
                     if field not in present_fields:
                         missing_fields.append(field)
 
-
                 if missing_fields:
                     print("The following fields do not exist in: " + file + ": " + str(missing_fields))
+                    failure = 1
                 else:
                     print("Validation Passed for: " + file)
 
-                #print(required_fields)
-                #print("\n")
-                #print(present_fields)
-                #print("\n")
-                #print(missing_fields)
+if failure != 0:
+    sys.exit(1)
