@@ -1,9 +1,9 @@
 [rule]
-author = ["Kaiber Yonnij test again "]
+author = ["Kaiber Yonnij"]
 description = "Using sysmon data, triggers on downloaded bat files from the internet via powershell."
 from = "now-6m"
 name = "malicious_bat_via_powershell"
-risk_score = 47
+risk_score = 19
 severity = "medium"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000002"

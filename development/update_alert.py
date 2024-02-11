@@ -24,7 +24,6 @@ for root, dirs, files in os.walk("elastic_rules"):
                 full_path = os.path.join(root, file)
                 with open(full_path,"rb") as toml:
                     alert = tomllib.load(toml)
-
                 if alert['rule']['type'] == 'query': #query based alert
                     required_fields = ['author','description', 'name', 'rule_id', 'risk_score', 'severity', 'type', 'query','threat']
                 elif alert['rule']['type'] == 'eql': #event correlation alert

@@ -1,5 +1,5 @@
 [rule]
-author = ["Kaiber Yonnij test again "]
+author = ["Kaiber Yonnij"]
 description = "Alert triggers via sysmon data based on MetaSploit Framework payload formatting for default Powershell reverse shell payloads."
 from = "now-6m"
 name = "potential_windows_shell_via_msf"
