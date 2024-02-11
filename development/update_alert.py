@@ -53,8 +53,13 @@ for root, dirs, files in os.walk("elastic_rules"):
                 data += "   \"enabled\": true\n}"
 
             rule_id = (alert['rule']['rule_id'])
-            url = url + "?rule_id=" + rule_id
+            update_url = url + "?rule_id=" + rule_id
 
-        # print(data)
-        elastic_data = requests.put(url, headers=headers, data=data).json()
-        print(elastic_data)
+            # print(data)
+            elastic_data = requests.put(update_url, headers=headers, data=data).json()
+            
+            for key in elastic_data:
+                if key == "status_code":
+                    if 404 == elastic_data["status_code"]:
+                        elastic_data = requests.post(url, headers=headers, data=data).json()
+                        print(elastic_data)
