@@ -6,7 +6,7 @@ name = "new_alert"
 risk_score = 1
 severity = "medium"
 type = "query"
-rule_id = "00000000-0000-0000-0000-000000000002"
+rule_id = "00000000-0000-0000-0000-000000000011"
 
 query = '''
 event.dataset : "windows.sysmon_operational" and process.parent.command_line: *Invoke-WebRequest* and process.parent.name: powershell.exe and process.command_line: *bat*
