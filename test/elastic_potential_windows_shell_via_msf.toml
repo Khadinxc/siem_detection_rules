@@ -1,3 +1,6 @@
+[metadata]
+creation_date = "2023/12/14"
+
 [rule]
 author = ["Kaiber Yonnij"]
 description = "Alert triggers via sysmon data based on MetaSploit Framework payload formatting for default Powershell reverse shell payloads."
