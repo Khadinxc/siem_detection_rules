@@ -2,8 +2,8 @@
 author = ["Kaiber Yonnij"]
 description = "Using sysmon data, triggers on downloaded bat files from the internet via powershell."
 from = "now-6m"
-name = "example_file"
-risk_score = 60
+name = "new_alert"
+risk_score = 1
 severity = "medium"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000002"
