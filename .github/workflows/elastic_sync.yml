@@ -29,4 +29,4 @@ jobs:
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           pip install requests
-          python deveopment/update_alert.py
+          python development/update_alert.py
