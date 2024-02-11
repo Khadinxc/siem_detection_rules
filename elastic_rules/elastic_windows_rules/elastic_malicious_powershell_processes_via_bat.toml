@@ -1,3 +1,6 @@
+[metadata]
+creation_date = "2023/12/10"
+
 [rule]
 author = ["Kaiber Yonnij"]
 description = "Checks my windows.sysmon_operational data set for command line processes starting with powershell, command line parent processes containing bat, and parent process names of cmd.exe."

@@ -19,6 +19,13 @@ for root, dirs, files in os.walk("elastic_rules"):
                 present_fields = []
                 missing_fields = []
 
+                try:
+                        if not alert['metadata']['creation_date']:
+                            pass
+                except:
+                    print("The metadata table does not contain a creation_date on: " + full_path)
+                    failure = 1
+
                 if alert['rule']['type'] == 'query': #query based alert
                     required_fields = ['author','description', 'name', 'rule_id', 'risk_score', 'severity', 'type', 'query','threat']
                 elif alert['rule']['type'] == 'eql': #event correlation alert
