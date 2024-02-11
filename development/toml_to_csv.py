@@ -3,7 +3,7 @@ import os
 
 list = {}
 
-for root, dirs, files in os.walk("elastic_rules/"): 
+for root, dirs, files in os.walk("elastic_rules"): 
     for file in files:
         if file.endswith(".toml"):
             full_path = os.path.join(root, file)

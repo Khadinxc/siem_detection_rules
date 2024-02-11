@@ -14,7 +14,7 @@ current = {}
 one_month = {}
 two_months = {}
 
-for root, dirs, files in os.walk("detections/"): 
+for root, dirs, files in os.walk("elastic_rules"): 
     for file in files:
         if file.endswith(".toml"):
             full_path = os.path.join(root, file)
