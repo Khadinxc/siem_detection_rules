@@ -1,0 +1,12 @@
+name,date,author,risk_score,severity,tactic,technique,subtechnique
+excessive_web_traffic,2023/12/02,['Kaiber Yonnij'],19,low,Discovery,T1046 - Network Service Discovery,none - none
+data_exfil_observed_via_ftp,2024/02/01,['Kaiber Yonnij'],50,medium,Exfiltration,T1020 - Automated Exfiltration,none - none
+Web Scanner Activity - Nmap and Nikto,2023/12/11,['Kaiber Yonnij'],25,low,Discovery,T1046 - Network Service Discovery,none - none
+malicious_file_over_unknown_ports,2024/02/01,['Kaiber Yonnij'],50,medium,Execution,T1059 - Command and Scripting Interpreter,T1059.003 - Windows Command Shell
+suspicious_file_written_to_temp_directory,2024/01/22,['Kaiber Yonnij'],67,medium,Discovery,T1082 - System Information Discovery,none - none
+data_archive_for_potential_exfil,2024/02/01,['Kaiber Yonnij'],1,medium,Collection,T1074 - Data Staged,T1074.001 - Local Data Staging
+malicious_powershell_processes_via_bat,2023/12/13,['Kaiber Yonnij'],20,medium,Execution,T1059 - Command and Scripting Interpreter,T1059.003 - Windows Command Shell
+malicious_bat_via_powershell,2024/01/12,['Kaiber Yonnij'],19,medium,Execution,T1059 - Command and Scripting Interpreter,T1059.003 - Windows Command Shell
+suspicious_file_added_to_registry,2023/12/21,['Kaiber Yonnij'],47,medium,Persistence,T1547 - Boot or Logon Autostart Execution,T1547.001 - Registry Run Keys / Startup Folder
+new_alert,2024/01/29,['Kaiber Yonnij'],1,medium,Execution,T1059 - Command and Scripting Interpreter,T1059.003 - Windows Command Shell
+potential_windows_shell_via_msf,2023/12/12,['Kaiber Yonnij'],47,medium,Execution,T1059 - Command and Scripting Interpreter,T1059.003 - Windows Command Shell
