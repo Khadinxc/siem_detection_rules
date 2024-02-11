@@ -3,7 +3,7 @@ author = ["Kaiber Yonnij"]
 description = "This alert looks for .zip files being created in a file path containing Windows\\Temp."
 from = "now-6m" 
 name = "data_archive_for_potential_exfil"
-risk_score = 55
+
 severity = "medium"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000001"
