@@ -1,10 +1,10 @@
 import tomllib
 import os
 
-output_path = "C:\\Users\\Kaden\\Documents\\GitHub\\siem_detection_rules\\metrics\\navigator.json"
+output_path = "metrics/navigator.json"
 techniques = {}
 
-for root, dirs, files in os.walk("C:\\Users\\Kaden\\Documents\\GitHub\\siem_detection_rules\\test"): 
+for root, dirs, files in os.walk("elastic_rules"): 
     for file in files:
         if file.endswith(".toml"):
             full_path = os.path.join(root, file)
