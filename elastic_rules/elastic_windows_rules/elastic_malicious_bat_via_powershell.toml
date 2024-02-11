@@ -1,5 +1,5 @@
 [rule]
-author = ["Kaiber Yonnij"]
+author = ["Kaiber Yonnij test again "]
 description = "Using sysmon data, triggers on downloaded bat files from the internet via powershell."
 from = "now-6m"
 name = "malicious_bat_via_powershell"
