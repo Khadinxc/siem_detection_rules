@@ -99,7 +99,7 @@ for technique in techniques:
 
 
 
-output_path = "C:\\Users\\Kaden\\Documents\\GitHub\\siem_detection_rules\\metrics\\navigator.json"
+output_path = "metrics/navigator.json"
 
 outF = open(output_path, "w")
 outF.write(beginning)
