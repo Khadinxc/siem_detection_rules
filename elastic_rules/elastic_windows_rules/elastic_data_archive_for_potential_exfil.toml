@@ -1,5 +1,5 @@
 [rule]
-author = ["Kaiber Yonnij"]
+author = ["Kaiber Yonnij test "]
 description = "This alert looks for .zip files being created in a file path containing Windows\\Temp."
 from = "now-6m" 
 name = "data_archive_for_potential_exfil"
