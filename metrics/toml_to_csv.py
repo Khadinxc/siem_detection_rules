@@ -41,7 +41,7 @@ for root, dirs, files in os.walk("C:\\Users\\Kaden\\Documents\\GitHub\\siem_dete
                 obj = {'name': name, 'date': date, 'author': author, 'risk_score': risk_score, 'severity': severity, 'mitre': filtered_object_array}
                 list[file] = obj
 
-output_path = "C:\\Users\\Kaden\\Documents\\GitHub\\siem_detection_rules\\metrics"
+output_path = "C:\\Users\\Kaden\\Documents\\GitHub\\siem_detection_rules\\metrics\\detectionmetrics.csv"
 
 outF = open(output_path, "w")
 outF.write("name,date,author,risk_score,severity,tactic,technique,subtechnique\n")
