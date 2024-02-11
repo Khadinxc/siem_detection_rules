@@ -1,3 +1,6 @@
+[metadata]
+creation_date = "2024/01/21"
+
 [rule]
 author = ["Kaiber Yonnij"]
 description = "Using sysmon data, triggers on downloaded bat files from the internet via powershell."
